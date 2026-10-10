@@ -1,8 +1,12 @@
 # halo.py - program Python pertama
 from datetime import date
 
+from colorama import Fore, Style, init
+
+init(autoreset=True)
+
 nama = input("Masukkan nama Anda: ")
-print(f"Halo, {nama}! Selamat datang di praktikum Python.")
+print(Fore.GREEN + f"Halo, {nama}! Selamat datang di praktikum Python.")
 
 while True:
     try:
@@ -11,8 +15,8 @@ while True:
             raise ValueError
         break
     except ValueError:
-        print("Input tidak valid. Masukkan tahun lahir berupa angka yang wajar.")
+        print(Fore.RED + "Input tidak valid. Masukkan tahun lahir berupa angka yang wajar.")
 
 usia = date.today().year - tahun_lahir
-print(f"Perkiraan usia Anda adalah {usia} tahun.")
+print(Fore.CYAN + Style.BRIGHT + f"Perkiraan usia Anda adalah {usia} tahun.")
 print("Semoga sukses!")
